@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="nav fixed flex justify-center w-screen min-h-[3.25rem] border-b-2">
+      <nav className="nav fixed flex justify-center w-screen min-h-[3.25rem] border-b-2 bg-white z-10">
         <div className="nav__container flex items-center justify-between w-[80vw] max-w-[1680px]">
           <Link href="/" passHref>
             <span className="text-2xl font-bold cursor-pointer">ToD</span>
