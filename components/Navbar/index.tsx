@@ -6,7 +6,7 @@ import GithubIcon from "../Icon/github";
 import LinkedinIcon from "../Icon/linkedin";
 
 const tabs = [
-  { name: "文章清單", link: "/markdown" },
+  { name: "文章清單", link: "/posts" },
   { name: "關於我", link: "/cv" },
 ];
 
