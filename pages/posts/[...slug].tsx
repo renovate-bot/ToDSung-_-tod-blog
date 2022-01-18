@@ -4,50 +4,36 @@ import { useRouter } from "next/router";
 
 import { join } from "path";
 
-// import Container from "../../components/container";
-// import Header from "../../components/header";
-// import Layout from "../../components/layout";
-// import PostBody from "../../components/post-body";
+import PostBody from "../../components/Post/PostBody";
 // import PostHeader from "../../components/post-header";
 // import PostTitle from "../../components/post-title";
 import { getAllPosts, getPostByPath, POSTS_ROOT_NAME } from "../../lib/api";
-import { CMS_NAME } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
 
 const Post = ({ post, morePosts, preview }) => {
-  console.log("Post");
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
-  return (
-    <>{post.content}</>
-    // <Layout preview={preview}>
-    //   <Container>
-    //     <Header />
-    //     {router.isFallback ? (
-    //       <PostTitle>Loading…</PostTitle>
-    //     ) : (
-    //       <>
-    //         <article className="mb-32">
-    //           <Head>
-    //             <title>
-    //               {post.title} | Next.js Blog Example with {CMS_NAME}
-    //             </title>
-    //             <meta property="og:image" content={post.ogImage.url} />
-    //           </Head>
-    //           <PostHeader
-    //             title={post.title}
-    //             coverImage={post.coverImage}
-    //             date={post.date}
-    //             author={post.author}
-    //           />
-    //           <PostBody content={post.content} />
-    //         </article>
-    //       </>
-    //     )}
-    //   </Container>
-    // </Layout>
+  return router.isFallback ? (
+    // <PostTitle>Loading…</PostTitle>
+    <></>
+  ) : (
+    <>
+      <article className="mb-32">
+        <Head>
+          <title>{post.title}</title>
+          {/* <meta property="og:image" content={post.ogImage.url} /> */}
+        </Head>
+        {/* <PostHeader
+          title={post.title}
+          coverImage={post.coverImage}
+          date={post.date}
+          author={post.author}
+        /> */}
+        <PostBody content={post.content} />
+      </article>
+    </>
   );
 };
 
