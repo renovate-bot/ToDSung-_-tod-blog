@@ -18,3 +18,13 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: JasonHandwriting;
+  src: url('/fonts/JasonHandwriting/JasonHandwriting1.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: DiamorScript;
+  src: url('/fonts/DiamorScript/Diamor.ttf') format('truetype');
+}
