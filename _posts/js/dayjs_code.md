@@ -1,3 +1,17 @@
+---
+title: '簡單閱讀 dayjs 原始碼 (一)'
+excerpt: 'JavaScript 的 Date API 應是眾所皆知的難用，了解 library 做了哪些事情，才不會陷入只會使用工具的境地，因此這篇文章是想看看 dayjs 做了哪些事情，以及學習現代 open source library 開發該注意的事情。'
+# coverImage: '/assets/blog/preview/cover.jpg'
+date: '2021-08-12T00:00:00.000Z'
+author:
+  name: Tod Sung
+# ogImage:
+  # url: '/assets/blog/preview/cover.jpg'
+labels: [
+  "Front End", "Web", "js", "library"
+]
+---
+
 # 簡單閱讀 dayjs 原始碼 (一)
 ### 筆者小牢騷
 
