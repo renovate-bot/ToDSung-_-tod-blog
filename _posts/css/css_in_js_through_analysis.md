@@ -1,4 +1,15 @@
-# css in js 全面解析 筆記
+---
+title: 'CSS in JS 全面解析 筆記'
+excerpt: ''
+date: '2021-07-25T00:00:00.000Z'
+author:
+  name: Tod Sung
+labels: [
+  "Front End", "Web", "CSS", "Dev Tool"
+]
+---
+
+# CSS in JS 全面解析 筆記
 
 https://css-tricks.com/a-thorough-analysis-of-css-in-js/
 
@@ -8,29 +19,29 @@ https://css-tricks.com/a-thorough-analysis-of-css-in-js/
 
 CSS modules 首創
 能夠給 class 獨特的名字，
-好處是可以很好的避免 css 汙染，或是不用思考獨特的名字
-命名不要把 css 的屬性加進去，這樣未來要改時，才不會發生奇怪的矛盾
+好處是可以很好的避免 CSS 汙染，或是不用思考獨特的名字
+命名不要把 CSS 的屬性加進去，這樣未來要改時，才不會發生奇怪的矛盾
 
 ### SSR (Server-Side Rendering)
 
-現代的 css 套件，都提供 server side rendenring
+現代的 CSS 套件，都提供 server side rendenring
 
 ### Automatic vendor prefixes
 
-不同的瀏覽器針對非標準 css spec 會有各自的名稱
-這些新的現代框架，可以讓你寫最基本的 css，打包完成後就自動補上支援各瀏覽器的 css
+不同的瀏覽器針對非標準 CSS spec 會有各自的名稱
+這些新的現代框架，可以讓你寫最基本的 CSS，打包完成後就自動補上支援各瀏覽器的 CSS
 
 ![](https://i.imgur.com/rz07trV.png)
 
 
 ### No inline styles
 
-目前不建議使用 style 的方式加入 css
+目前不建議使用 style 的方式加入 CSS
 主要是會有效能的考量
 
 ### Full CSS support
 
-所有的 css 框架，都提供包含
+所有的 CSS 框架，都提供包含
 *  (偽元素) pseudo classes and elements;
 *  (RWD) media queries;
 *  (動畫) keyframe animations.
@@ -39,7 +50,7 @@ CSS modules 首創
 
 ### Styles/Component co-location
 
-選擇框架時，需要考量當 css 寫在與 html js 相同的檔案時，
+選擇框架時，需要考量當 CSS 寫在與 html JS 相同的檔案時，
 有沒有能夠解析的能力
 
 ### Styles definition syntax
@@ -73,32 +84,32 @@ const heading = css({
 輸出是包在同個檔案之中以 `<style>` 的方式
 好處是可以減少讀取的速度，render 的速度會更快
 
-#### css output
+#### CSS output
 
-輸出以獨立檔案 css 包的方式
+輸出以獨立檔案 CSS 包的方式
 SSR 可以選擇這個，可以更方便的套用快取
 
 ### Atomic CSS
 
-可以把重複的 css style 都包裝成單一的 class
+可以把重複的 CSS style 都包裝成單一的 class
 缺點是在看網頁時的 dev tool 不好觀察
-優點是大大降低 css 的大小
+優點是大大降低 CSS 的大小
 
 ## conclusion
 
-要思考選擇的 css in js 框架我們可以考慮以下幾點
+要思考選擇的 CSS in JS 框架我們可以考慮以下幾點
 
 ### 我們是否使用 REACT 或是任何其他框架? 
 
-當然有使用網頁框架的話，必須選擇能夠支援的 css in js 框架
+當然有使用網頁框架的話，必須選擇能夠支援的 CSS in JS 框架
 
 ### 我們是否是一個有高度互動， SPA APP? 
 
-是的話就做好 lazy loading 的工作，不需要將 css 變成單一檔案
+是的話就做好 lazy loading 的工作，不需要將 CSS 變成單一檔案
 
 ### 我們是否是一個 SSR 網站?
 
-把程式變成 css 檔案，可以更好的套用快取功能
+把程式變成 CSS 檔案，可以更好的套用快取功能
 
 ### 我們是否經常更新 style? 
 
@@ -106,5 +117,5 @@ SSR 可以選擇這個，可以更方便的套用快取
 
 ### 我們是否重複使用了很多樣式和組件？
 
-使用 Atomic css 可以非常好的解決問題
-筆者駐我認為像 Tailwind css 就是以這種方式進行處理的
+使用 Atomic CSS 可以非常好的解決問題
+筆者駐我認為像 Tailwind CSS 就是以這種方式進行處理的

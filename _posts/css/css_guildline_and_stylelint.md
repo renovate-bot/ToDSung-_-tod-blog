@@ -1,3 +1,14 @@
+---
+title: 'CSS style 指南，搭配 stylelint 套件'
+excerpt: '記錄了數篇文章的內容，如何撰寫乾淨的 css 程式碼，另外補充了 stylelint 的安裝方式(for vue)'
+date: '2021-07-25T00:00:00.000Z'
+author:
+  name: Tod Sung
+labels: [
+  "Front End", "Web", "CSS", "Dev Tool"
+]
+---
+
 # css guildline & stylelint
 
 ## 出處
@@ -68,7 +79,7 @@ https://dotblogs.com.tw/explooosion/2018/09/30/141005 <br>
 * 使用 soft tabs (兩個空格）作為縮排。(我自己是四格，覺得影響不大，但是 stylelint 要調整) 
 * 類別名稱建議使用 dashes 代替 camelCasing。如果你使用 BEM，也可以使用底線或 PascalCasing（參考下面的 [OOCSS 和 BEM](#oocss-and-bem)）。
 * 不要使用 ID 選擇器。<br>
-(ID 選擇器會影響 css 套用的優先權，在 HTML 的準則中，每個 ID 應該獨一無二)
+(ID 選擇器會影響 CSS 套用的優先權，在 HTML 的準則中，每個 ID 應該獨一無二)
 * 在一個規則宣告中，若同時使用多個選擇器時，讓每個選擇器各佔一行。
 * 在規則宣告的左大括弧 `{` 前加上一個空格。
 * 在屬性設定的冒號 `:` 後面加上一個空格，前面不要加空格。
@@ -300,7 +311,7 @@ Mixins 可幫助你的代碼遵循 DRY 原則（Don't Repeat Yourself）、增�
 
 ## Type Selectors
 
-由於效能考量，不要在 css 選擇器中使用 element 名稱
+由於效能考量，不要在 CSS 選擇器中使用 element 名稱
 https://www.stevesouders.com/blog/2009/06/18/simplifying-css-selectors/
 
 **Bad**
@@ -348,7 +359,7 @@ div.error {
 
 ## Declaration Order
 
-照字幕順序排列 css 屬性，除了為了 browser 兼容所使用的屬性
+照字幕順序排列 CSS 屬性，除了為了 browser 兼容所使用的屬性
 
 **Good**
 

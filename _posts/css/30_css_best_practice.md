@@ -1,11 +1,22 @@
-# 30 css best practice
+---
+title: '30 個值得你嘗試的 CSS 最佳實踐'
+excerpt: '原文中，提了 30 個 CSS 的 best practice，我節錄了我目前尚未應用的問題，也補充了少少的資訊，不管你是初學的人還是已經有一定經驗，都應該要讀過這篇文章，讓你的 css 寫得更精簡、漂亮！'
+date: '2021-07-28T00:00:00.000Z'
+author:
+  name: Tod Sung
+labels: [
+  "Front End", "Web", "CSS"
+]
+---
+
+# 30 CSS best practice
 
 有能力看懂英文的人，建議左轉文章 <br>
 https://code.tutsplus.com/tutorials/30-css-best-practices-for-beginners--net-6741
 
 ### 1. Organize the Stylesheet With a Top-Down Structure
 
-建議可以根據 source code 去排序 css 的撰寫順序，<br>
+建議可以根據 source code 去排序 CSS 的撰寫順序，<br>
 補充:
 有文章建議以 class 做為選擇器無論是效能還是 套用的 order 都會比較好辨識
 
@@ -20,13 +31,13 @@ https://code.tutsplus.com/tutorials/30-css-best-practices-for-beginners--net-674
 
 }
 ```
-### 2. utility base or components base css
+### 2. utility base or components base CSS
 
-Tailwind css 的模式是 utility base 的 css
+Tailwind CSS 的模式是 utility base 的 CSS
 改動可以更簡單
 
-目前我使用的 bem 命名方式是 components base 的 css
-缺點是會寫重複的 css 相應的打包時也會有更大的大小
+目前我使用的 bem 命名方式是 components base 的 CSS
+缺點是會寫重複的 CSS 相應的打包時也會有更大的大小
 
 ### 3. Use the Right Doctype
 

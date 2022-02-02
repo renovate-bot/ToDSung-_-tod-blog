@@ -1,4 +1,15 @@
-# 2020 Frontend developer roadmap <!-- 你猜得沒錯這是去年的東西 -->
+---
+title: ' 2020 Frontend Developer Roadmap'
+excerpt: '分享 Web developer 2020 技術學習知識庫，閱讀後可以了解什麼技術該優先學習，希望能夠幫助到初學者，看完以後記得記得連到 github 給原作者點個 star！'
+date: '2021-07-28T00:00:00.000Z'
+author:
+  name: Tod Sung
+labels: [
+  "Front End", "Web"
+]
+---
+
+# 2020 Frontend Developer Roadmap <!-- 你猜得沒錯這是去年的東西 -->
 
 此文章用於與辦公室的同事分享，
 看英文沒有問題的朋友，可以直接左轉看原文，當然我也寫了很多我自己淺薄的知識與經驗，2021 甚至 2022 的部分，後續會努力補上
@@ -68,7 +79,7 @@
   3. Use Alt Attributes with Images => 平常撰寫時稍微注意一下就好，補充一下圖片資訊
 
 ### CSS
-* Accessbillity <br>
+* Accessibility <br>
     mozilla 提到，盡量讓 html tag 在添加完以後也貼近本來的目的，不要寫一個 btn 不是用作 btn
 * SEO Basic <br>
     提高 SEO 就是讓你的網站更容易被搜尋引擎搜到
@@ -84,7 +95,7 @@
 * Syntax and Basic Constructs <br>
   不贅述，在正確的時候用正確的語法去寫，記得隨時努力保持程式碼整潔
 * Learn Dom Manipulations <br>
-  使用 vanilla js 或是 jQuery 可以操作 dom，在使用三大框架的時候，一些基本的語法還是可以稍微了解
+  使用 vanillaJS 或是 jQuery 可以操作 dom，在使用三大框架的時候，一些基本的語法還是可以稍微了解
 * Learn Fetch API / Ajax(XHR) <br>
   非同步取得資料，我們使用 axios，也可以使用 fetch API，比較常見的問題是當同時呼叫多個 request 記得用 Promise.all 而非 forEach
 * ES6+ and modular JavaScript <br>
@@ -105,7 +116,7 @@
  語意話版本 => 非常推薦這篇文章
  https://wadehuang1993.github.io/blog/git_commit_message_best_practice/
  
-### Web Securtiy Knowledge
+### Web Security Knowledge
 ![](https://i.imgur.com/bpHQMf9.png)
 
 * HTTPS
@@ -121,12 +132,12 @@
 ![](https://i.imgur.com/aTtJaJg.png)
 讓你可以裝套件的，每個專案各自裝，才不會有套件衝突問題，偶爾會遇到版本問題，當遇到問題時，記得跟夥伴互相檢查彼此的不管是 node 或是 npm 版本
 
-### CSS Architecture and CSS preprocessors (CSS預處理器)
+### CSS Architecture and CSS preprocessor (CSS預處理器)
 
 ![](https://i.imgur.com/z4uOxLy.png)
 
 * BEM
-一種 css 命名方式，主要就是讓你好維護，而且不容易出現 css 汙染用的，實務上的應用經驗，這種多層的 css 命名，要聰明的分層有時候不太容易，而且還是會有蠻多重複的 css 程式碼，現在有提倡另外一種 utility base 的寫法(詳情可見 TailWind)
+一種 CSS 命名方式，主要就是讓你好維護，而且不容易出現 CSS 汙染用的，實務上的應用經驗，這種多層的 CSS 命名，要聰明的分層有時候不太容易，而且還是會有蠻多重複的 CSS 程式碼，現在有提倡另外一種 utility base 的寫法(詳情可見 TailWind)
 * CSS預處理器
 讓你可以寫 CSS 像在寫 CODE 一樣，我現在是用 SCSS，把變數拉出來，然後嵌套減少重複相似的命名，也有 mixin 什麼的，要使用的話 webpack.config 跟 \<style> 那邊改一下就行了。
 
@@ -158,7 +169,7 @@ package.json 裡面寫 npm run XXXX 的指令，可以 run dev server，也能 r
 ![](https://i.imgur.com/M5lOhkC.png)
 
 * React.js <br>
-  主打不用寫 css html，全部都是 js 
+  主打不用寫 CSS html，全部都是撰寫 JavaScript 程式碼 
 * Angular (我完全沒碰過 <br>
   網路上看聽影片的感想(可以看保哥)，像是主打 Typescript，強制你要寫型別，對團隊來說可能爛 code 機率降低，但也增進了開發的複雜度，這個各有利弊。
 * Vue.js <br>
@@ -176,12 +187,12 @@ https://cythilya.github.io/2020/02/25/start-your-app-the-better-way-with-styled-
 ![](https://i.imgur.com/zTA3DM2.png)
 
 * Styled Component<br>
-  直接幫你把 style 放進 componet 中，不過這是 react 的範例就是了
+  直接幫你把 style 放進 component 中，不過這是 react 的範例就是了
 ![](https://i.imgur.com/viC77PP.png)
 
 * CSS Module
   可以用 style.className 的方式專門引入一個 class，然後會幫你 hash 讓你不會被干擾<br>
-  (使用 vue css scope 做的事情看起來就是這樣子了
+  (使用 Vue 的 css scope 做的事情看起來就是這樣子了
 ![](https://i.imgur.com/qoTFbHC.png)
 
 ### Web Components
@@ -190,7 +201,7 @@ https://cythilya.github.io/2020/02/25/start-your-app-the-better-way-with-styled-
 
 * HTML Templates
  https://developer.mozilla.org/zh-TW/docs/Web/HTML/Element/template <br>
- 範例說，可以先建立好 html，但不會 render 等到用 js 觸發再把畫面畫出來 <br>
+ 範例說，可以先建立好 html，但不會 render 等到用 JS 觸發再把畫面畫出來 <br>
  平常使用的 slot 的觀念跟這個也有相關
 * Custom Elements
  自製 html tag 的概念 => vue 幫我們做爆的事情
@@ -205,7 +216,7 @@ https://cythilya.github.io/2020/02/25/start-your-app-the-better-way-with-styled-
 
 ![](https://i.imgur.com/XzV0jMG.png)
 
-讓你不用一直重複刻 componet 的工具們 <br>
+讓你不用一直重複刻 component 的工具們 <br>
 比較常聽到的是 <br>
 Material UI (經典) => 這個是類似 vuetify 的東西 <br>
 Tailwind CSS (今年最熱門) => 這給妳很多預先寫好的 class 讓你去套用

@@ -1,3 +1,14 @@
+---
+title: '給前端工程師的 SEO 基礎知識補強'
+excerpt: '分享由於面試被問到 SEO 相關問題，於是高速給自己惡補的一段 SEO 相關知識。'
+date: '2021-07-28T00:00:00.000Z'
+author:
+  name: Tod Sung
+labels: [
+  "Front End", "Web", "SEO"
+]
+---
+
 # 給前端工程師的 SEO 基礎知識補強
 
 ## 起源
@@ -15,7 +26,7 @@ On-Page SEO 或是 On-Site SEO，指的是頁面內所有為了讓搜尋引擎�
 可以針對網站的功能性，或是文章的主題，在前一百字時就說明清楚功能性為何，Google 本身對於網站優先顯示的內容本身會給予較高的權重。
 頻率也相當重要，如果持續的使用相同的文字， 搜尋引擎更可以清楚文章的主題為何。
 
-#### Symantic HTML tag 語意化 html 
+#### Semantic HTML tag 語意化 html 
 從 HTML5 開始，我們不再只是僅能使用 div 或是 span 這種不具語意的 tag，反之當你使用帶有語意的 html，可以更容易的讓 Google 解析器了解你的網站、文章架構。
 
 舉例來說
@@ -67,7 +78,7 @@ meta tag 是用來描述這份 html 的目的為何的 tag，他不會讓使用�
 可以針對以下五個要素去評分
 * Performance 效能
     下載速度、顯示速度
-* Accessiblity 網頁無障礙
+* Accessibility 網頁無障礙
     網頁使用任何裝置都可以使用，甚至提供給身障人士有效的體驗
 * Best Practices 最佳實踐
     合理的使用 api 或是 cache，有沒有使用不合理的用戶權限

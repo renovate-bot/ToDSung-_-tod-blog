@@ -1,14 +1,11 @@
 ---
 title: '簡單閱讀 dayjs 原始碼 (一)'
-excerpt: 'JavaScript 的 Date API 應是眾所皆知的難用，了解 library 做了哪些事情，才不會陷入只會使用工具的境地，因此這篇文章是想看看 dayjs 做了哪些事情，以及學習現代 open source library 開發該注意的事情。'
-# coverImage: '/assets/blog/preview/cover.jpg'
+excerpt: '分享閱讀 dayjs 原始碼的小心得，希望可以從中學習一些比較優質的模組程式撰寫方法。'
 date: '2021-08-12T00:00:00.000Z'
 author:
   name: Tod Sung
-# ogImage:
-  # url: '/assets/blog/preview/cover.jpg'
 labels: [
-  "Front End", "Web", "js", "library"
+  "Front End", "Web", "JavaScript", "library"
 ]
 ---
 
@@ -120,7 +117,7 @@ const parseDate = (cfg) => {
 
 4. 重頭戲來囉，如果 date 型別是 string 而且 string 中不含 Z 的話，
     1. 執行 dayjs 的 regex 檢查來把 date parse 好，
-    2. m (月份)，因為 js 的月份是從 0~11 開始，第 4 行透過 -1 的方式計算月份 value 要注意的是值會轉型成 nubmer 變數，
+    2. m (月份)，因為 JS 的月份是從 0~11 開始，第 4 行透過 -1 的方式計算月份 value 要注意的是值會轉型成 number 變數，
     3. ms (毫秒) 僅留前三位，完成以後就能根據 new Date 的丟數個參數的方式，得到最終的 Date 實例。
     ```javascript=
     export const REGEX_PARSE = /^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/
@@ -140,7 +137,7 @@ const parseDate = (cfg) => {
 
 
 ### init function
-parse function 執行完成以後，緊隨著執行的是 <b>init</b>，這邊的 $date 已經被轉成 js Date 的實例，因此可以呼叫 Date 的任意 function，到這邊為止，我們終於得到了全部日期時間的變數！！
+parse function 執行完成以後，緊隨著執行的是 <b>init</b>，這邊的 $date 已經被轉成 JS Date 的實例，因此可以呼叫 Date 的任意 function，到這邊為止，我們終於得到了全部日期時間的變數！！
 ```javascript=
 class Dayjs {
   init() {
