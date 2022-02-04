@@ -10,9 +10,15 @@ const EntryContent = () => {
           height="2160"
           objectFit="contain"
           alt="entryImage"
+          className="rounded-2xl"
         />
       </div>
-      <div className="text__wrapper absolute p-5 bg-white flex flex-col rounded-r-3xl">
+      <div
+        className="text__wrapper absolute left-[10vw] bottom-0 w-96 h-96 p-5 bg-white 
+          rounded-tl-[30%] rounded-tr-[60%] rounded-bl-[37%] rounded-br-[40%]
+          flex flex-col items-center justify-center
+        "
+      >
         <h1 className="introduction__title mb-4 text-8xl font-['DiamorScript'] text-amber-800">
           I am ToD
         </h1>

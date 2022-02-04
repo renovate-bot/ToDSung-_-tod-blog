@@ -12,7 +12,7 @@ const LandingPage: NextPage = () => {
     <main className="main">
       <section id="main" className="main">
         <EntryContent />
-        <Posts />
+        {/* <Posts /> */}
         {/* <Guide /> */}
       </section>
     </main>
