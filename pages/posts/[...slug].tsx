@@ -15,7 +15,6 @@ const Post = ({ post, morePosts, preview }) => {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
-  console.log(post.content);
   return router.isFallback ? (
     // <PostTitle>Loading…</PostTitle>
     <></>
