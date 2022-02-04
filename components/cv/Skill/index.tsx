@@ -1,13 +1,10 @@
-const Skill = ({ icon, name }) => (
-  <div className="skill">
-    <div className="title">
-      {/* <i className=""="title__icon"
-        :class="[ icon.source, icon.name ]"
-        :style="{
-          'color': icon.color
-        }"
-      /> */}
-      <h3 className="title__name">{name}</h3>
+import { AiFillHtml5 } from "react-icons/ai";
+
+const Skill = ({ name, icon }) => (
+  <div className="skill flex flex-col">
+    <div className="title flex flex-wrap items-center gap-2">
+      {icon.component && <icon.component color={icon.color} />}
+      <h3 className={`title__name text-base`}>{name}</h3>
     </div>
   </div>
 );

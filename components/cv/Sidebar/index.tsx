@@ -14,7 +14,7 @@ const Sidebar = ({ skills = [] }) => {
       <span className="cv-sidebar__title mt-8 text-3xl">宋明謙</span>
       <span>Tod Sung</span>
       <span>前端工程師</span>
-      <ul className="details flex items-start flex-col mt-8 w-full">
+      <ul className="details flex items-start flex-col mt-8 w-full list-disc	">
         <li>0975-871-937</li>
         <li>wlunareve@gmail.com</li>
         <li>中正大學 資訊管理學系</li>
@@ -28,14 +28,9 @@ const Sidebar = ({ skills = [] }) => {
       </div>
       <div className="skills flex flex-col self-start">
         <span className="skills__title text-3xl">skills</span>
-        <div className="skills__content">
+        <div className="skills__content grid grid-cols-2 mt-4 gap-4">
           {skills.map(({ name, icon }) => (
-            <Skill
-              key={name}
-              name={name}
-              icon={icon}
-              className="skills__item"
-            />
+            <Skill key={name} name={name} icon={icon} />
           ))}
         </div>
       </div>

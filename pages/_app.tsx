@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <main id="app" className="app flex justify-center">
+    <main id="app" className="app flex text-justify	justify-center">
       <Navbar />
       <div className="component-wrapper relative mt-[3.25rem] w-[80vw] max-w-[1680px]">
         <Component {...pageProps} />
