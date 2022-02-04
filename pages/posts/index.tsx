@@ -17,15 +17,15 @@ const Posts = ({ allPosts }) => {
         .map((post, idx) => (
           <article
             key={post.title}
-            className="article xl:grid grid-cols-4 mt-4 mb-8 mx-4 flex flex-col"
+            className="article xl:grid grid-cols-4 my-4 pb-4 border-b-2 flex flex-col"
           >
             <div className="article__left-side col-span-3">
               <Link href={`/posts/${post.slug}`} passHref>
                 <div>
-                  <span className="article__title text-2xl leading-8 text-blue-grey-800">
+                  <span className="article__title text-2xl font-semibold leading-8 text-blue-grey-800 cursor-pointer">
                     {post.title}
                   </span>
-                  <p className="article__introduction mx-0 my-2 text-ellipsis line-clamp-2 text-gray-500">
+                  <p className="article__introduction mx-0 my-2 h-12 text-ellipsis line-clamp-2 text-gray-500 cursor-pointer">
                     {post.excerpt}
                   </p>
                 </div>
@@ -34,7 +34,7 @@ const Posts = ({ allPosts }) => {
                 {post.labels?.map((label) => (
                   <span
                     key={label}
-                    className="label__item px-2 py-[0.125rem] bg-gray-300 rounded-2xl"
+                    className="label__item px-2 py-[0.125rem] bg-gray-200 rounded-2xl"
                   >
                     {label}
                   </span>
@@ -43,7 +43,7 @@ const Posts = ({ allPosts }) => {
             </div>
             {post.date && (
               <span className="article__time self-end text-sm">
-                最後修改時間：{post.date}
+                最後修改時間：{new Date(post.date).toISOString().slice(0, 10)}
               </span>
             )}
           </article>

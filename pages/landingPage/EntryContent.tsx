@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const EntryContent = () => {
   return (
-    <div className="entry-content relative my-1 flex flex-col justify-center">
+    <div className="entry-content relative my-4 flex flex-col justify-center">
       <div className="image__wrapper">
         <Image
           src="/entryImage.jpg"

@@ -15,22 +15,16 @@ const Post = ({ post, morePosts, preview }) => {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+  console.log(post.content);
   return router.isFallback ? (
     // <PostTitle>Loading…</PostTitle>
     <></>
   ) : (
     <>
-      <article className="mb-32">
+      <article className="mt-4 mb-8">
         <Head>
           <title>{post.title}</title>
-          {/* <meta property="og:image" content={post.ogImage.url} /> */}
         </Head>
-        {/* <PostHeader
-          title={post.title}
-          coverImage={post.coverImage}
-          date={post.date}
-          author={post.author}
-        /> */}
         <PostBody content={post.content} />
       </article>
     </>
