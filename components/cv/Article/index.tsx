@@ -1,6 +1,19 @@
+import { FC } from "react";
+
 import ExternalLink from "../../ExternalLink";
 
-const Article = ({
+type Props = {
+  title: string;
+  subtitle?: string;
+  titleLink?: string;
+  paragraph: string;
+  ulContents: {
+    title: string;
+    content: string[];
+  }[];
+};
+
+const Article: FC<Props> = ({
   title,
   subtitle,
   titleLink,

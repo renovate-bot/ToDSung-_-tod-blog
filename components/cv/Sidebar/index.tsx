@@ -1,6 +1,18 @@
+import { FC } from "react";
+
+import type Icon from "../../../types/icon";
 import Skill from "../Skill";
 
-const Sidebar = ({ skills = [] }) => {
+type Props = {
+  skills: {
+    name: string;
+    description?: string;
+    level?: number;
+    icon: Icon;
+  }[];
+};
+
+const Sidebar: FC<Props> = ({ skills = [] }) => {
   const aboutContents = [
     "我是 Tod，是講究務實的人，總是渴望把一切事情的基本做好，追求寫出可複用，少技術債的程式碼。",
     "正嘗試著分享我的歷程，期待精進自己的同時也能幫到他人，希望自己能夠從小處開始分享，將自己的小小能量散發出去！",

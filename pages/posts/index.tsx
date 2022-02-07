@@ -1,15 +1,14 @@
+import { FC } from "react";
 import Link from "next/link";
 
 import { getAllPosts } from "../../lib/api";
+import Post from "../../types/post";
 
-// import Post from "../types/";
+type Props = {
+  allPosts: Post[];
+};
 
-// type Props = {
-//   allPosts: Post[];
-// };
-
-const Posts = ({ allPosts }) => {
-  console.log(allPosts);
+const Posts: FC<Props> = ({ allPosts }) => {
   return (
     <div className="posts mx-auto my-auto max-w-7xl">
       {allPosts
@@ -55,7 +54,6 @@ const Posts = ({ allPosts }) => {
 export default Posts;
 
 export const getStaticProps = async () => {
-  console.log("post/index");
   const allPosts = getAllPosts([
     "title",
     "date",

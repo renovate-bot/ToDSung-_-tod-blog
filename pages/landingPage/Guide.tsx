@@ -1,12 +1,14 @@
+import { FC } from "react";
 import Image from "next/image";
 
-const postsExample = [
-  "/mock_image/column.jpg",
-  "/mock_image/column.jpg",
-  "/mock_image/column.jpg",
-];
+type GuideItemProps = {
+  name?: string;
+  imageSrc: string;
+  width?: string;
+  height?: string;
+};
 
-const GuideItem = ({ name, imageSrc, width, height }) => (
+const GuideItem: FC<GuideItemProps> = ({ name, imageSrc, width, height }) => (
   <div className="flex">
     {width && height ? (
       <Image
@@ -29,7 +31,17 @@ const GuideItem = ({ name, imageSrc, width, height }) => (
   </div>
 );
 
-const Guide = ({ topRows = postsExample }) => {
+const postsExample = [
+  "/mock_image/column.jpg",
+  "/mock_image/column.jpg",
+  "/mock_image/column.jpg",
+];
+
+type GuideProps = {
+  topRows: string[];
+};
+
+const Guide: FC<GuideProps> = ({ topRows = postsExample }) => {
   return (
     <>
       <h2 className="guide my-4 text-6xl font-['DiamorScript']">Guide</h2>

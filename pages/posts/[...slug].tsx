@@ -1,3 +1,4 @@
+import { FC } from "react";
 import ErrorPage from "next/error";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -10,7 +11,15 @@ import PostBody from "../../components/Post/PostBody";
 import { getAllPosts, getPostByPath, POSTS_ROOT_NAME } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
 
-const Post = ({ post, morePosts, preview }) => {
+type Props = {
+  post: {
+    slug?: string;
+    title: string;
+    content: string;
+  };
+};
+
+const Post: FC<Props> = ({ post }) => {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -32,7 +41,13 @@ const Post = ({ post, morePosts, preview }) => {
 
 export default Post;
 
-export const getStaticProps = async ({ params }) => {
+type Params = {
+  params: {
+    slug: string[];
+  };
+};
+
+export const getStaticProps = async ({ params }: Params) => {
   const path = join(POSTS_ROOT_NAME, ...params.slug) + ".md";
   const post = getPostByPath(path, [
     "title",
@@ -44,7 +59,6 @@ export const getStaticProps = async ({ params }) => {
     "coverImage",
   ]);
   const content = await markdownToHtml(post.content || "");
-  // console.log(content);
 
   return {
     props: {

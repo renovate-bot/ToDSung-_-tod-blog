@@ -4,9 +4,17 @@ import { join } from "path";
 
 export const POSTS_ROOT_NAME = "_posts";
 
-const getFullPath = (path) => join(process.cwd(), path);
+type GetFullPath = {
+  (path: string): string;
+};
 
-export function getPostFullSlugs(path = POSTS_ROOT_NAME) {
+const getFullPath: GetFullPath = (path) => join(process.cwd(), path);
+
+type GetPostFullSlugs = {
+  (path?: string): string[];
+};
+
+export const getPostFullSlugs: GetPostFullSlugs = (path = POSTS_ROOT_NAME) => {
   const postsPath = getFullPath(path);
   const files = fs.readdirSync(postsPath);
   return files
@@ -17,14 +25,22 @@ export function getPostFullSlugs(path = POSTS_ROOT_NAME) {
       return getPostFullSlugs(fullPath);
     })
     .flat();
-}
+};
 
-export function getPostByPath(path, fields = []) {
+type Items = {
+  [key: string]: string;
+};
+
+type GetPostByPath = {
+  (path: string, fields: string[]): Items;
+};
+
+export const getPostByPath: GetPostByPath = (path, fields = []) => {
   const fullPath = getFullPath(path);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  const items = {};
+  const items: Items = {};
 
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
@@ -42,13 +58,16 @@ export function getPostByPath(path, fields = []) {
   });
 
   return items;
-}
+};
 
-export function getAllPosts(fields = []) {
+type GetAllPosts = {
+  (field: string[]): Items[];
+};
+
+export const getAllPosts: GetAllPosts = (fields = []) => {
   const paths = getPostFullSlugs();
   const posts = paths
     .map((path) => getPostByPath(path, fields))
-    // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
-}
+};
