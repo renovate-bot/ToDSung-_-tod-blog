@@ -1,15 +1,15 @@
-import { FC } from "react";
-import ErrorPage from "next/error";
-import Head from "next/head";
-import { useRouter } from "next/router";
+import { FC } from 'react';
+import ErrorPage from 'next/error';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-import { join } from "path";
+import { join } from 'path';
 
-import PostBody from "../../components/Post/PostBody";
+import PostBody from '../../components/Post/PostBody';
 // import PostHeader from "../../components/post-header";
 // import PostTitle from "../../components/post-title";
-import { getAllPosts, getPostByPath, POSTS_ROOT_NAME } from "../../lib/api";
-import markdownToHtml from "../../lib/markdownToHtml";
+import { getAllPosts, getPostByPath, POSTS_ROOT_NAME } from '../../lib/api';
+import markdownToHtml from '../../lib/markdownToHtml';
 
 type Props = {
   post: {
@@ -29,7 +29,7 @@ const Post: FC<Props> = ({ post }) => {
     <></>
   ) : (
     <>
-      <article className="mt-4 mb-8">
+      <article className='mt-4 mb-8'>
         <Head>
           <title>{post.title}</title>
         </Head>
@@ -48,17 +48,17 @@ type Params = {
 };
 
 export const getStaticProps = async ({ params }: Params) => {
-  const path = join(POSTS_ROOT_NAME, ...params.slug) + ".md";
+  const path = join(POSTS_ROOT_NAME, ...params.slug) + '.md';
   const post = getPostByPath(path, [
-    "title",
-    "date",
-    "slug",
-    "author",
-    "content",
-    "ogImage",
-    "coverImage",
+    'title',
+    'date',
+    'slug',
+    'author',
+    'content',
+    'ogImage',
+    'coverImage',
   ]);
-  const content = await markdownToHtml(post.content || "");
+  const content = await markdownToHtml(post.content || '');
 
   return {
     props: {
@@ -71,12 +71,12 @@ export const getStaticProps = async ({ params }: Params) => {
 };
 
 export const getStaticPaths = async () => {
-  const posts = getAllPosts(["slug"]);
+  const posts = getAllPosts(['slug']);
   return {
-    paths: posts.map((post) => {
+    paths: posts.map(post => {
       return {
         params: {
-          slug: post.slug.split("/"),
+          slug: post.slug.split('/'),
         },
       };
     }),

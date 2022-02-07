@@ -1,4 +1,4 @@
-import type { IconType } from "react-icons/lib";
+import type { IconType } from 'react-icons/lib';
 
 type Icon = {
   component: IconType;
