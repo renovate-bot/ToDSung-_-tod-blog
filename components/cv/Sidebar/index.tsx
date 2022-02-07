@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import type Icon from '../../../types/icon';
+import type Icon from '@/types/icon';
 import Skill from '../Skill';
 
 type Props = {

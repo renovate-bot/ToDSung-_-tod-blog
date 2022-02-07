@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import Link from 'next/link';
 
-import { getAllPosts } from '../../lib/api';
-import Post from '../../types/post';
+import { getAllPosts } from '@/lib/api';
+import Post from '@/types/post';
 
 type Props = {
   allPosts: Post[];

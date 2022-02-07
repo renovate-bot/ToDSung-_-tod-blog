@@ -5,11 +5,11 @@ import { useRouter } from 'next/router';
 
 import { join } from 'path';
 
-import PostBody from '../../components/Post/PostBody';
-// import PostHeader from "../../components/post-header";
-// import PostTitle from "../../components/post-title";
-import { getAllPosts, getPostByPath, POSTS_ROOT_NAME } from '../../lib/api';
-import markdownToHtml from '../../lib/markdownToHtml';
+import PostBody from '@/components/Post/PostBody';
+// import PostHeader from "@/components/post-header";
+// import PostTitle from "@/components/post-title";
+import { getAllPosts, getPostByPath, POSTS_ROOT_NAME } from '@/lib/api';
+import markdownToHtml from '@/lib/markdownToHtml';
 
 type Props = {
   post: {
