@@ -5,9 +5,9 @@ type Post = {
   title: string;
   excerpt: string;
   date: string;
-  author: Author;
+  author?: Author;
   labels: string[];
-  content: string;
+  content?: string;
 };
 
 export default Post;
