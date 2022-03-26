@@ -1,12 +1,12 @@
 import { FC } from 'react';
 
-import markdownStyles from '../../styles/markdown-styles.module.css';
+import markdownStyles from '@/styles/markdown-styles.module.css';
 
 type Props = {
   content: string;
 };
 
-const PostBody: FC<Props> = ({ content }) => {
+const PostDetail: FC<Props> = ({ content }) => {
   return (
     <div className='mx-auto max-w-5xl'>
       <div
@@ -17,4 +17,4 @@ const PostBody: FC<Props> = ({ content }) => {
   );
 };
 
-export default PostBody;
+export default PostDetail;
