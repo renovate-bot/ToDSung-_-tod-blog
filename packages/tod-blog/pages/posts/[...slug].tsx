@@ -8,7 +8,6 @@ import Painting from '@curi/components/Painting';
 
 import MarkdownDetail from '@/containers/Post/MarkdownDetail';
 import { getAllPosts, getPostByPath } from '@/lib/api';
-import { getRandomImageUrl } from '@/lib/image';
 import markdownToHtml from '@/lib/markdownToHtml';
 
 type Props = {
@@ -32,10 +31,12 @@ const Post: FC<Props> = ({ post }) => {
     <></>
   ) : (
     <>
-      <article className='mx-auto mt-4 mb-8 max-w-5xl'>
-        <div className='aspect-h-9 aspect-w-16 mb-4'>
-          <Painting src={post.image ?? getRandomImageUrl(0)} />
-        </div>
+      <article className='mx-auto mt-4 mb-8 max-w-3xl'>
+        {post.image && (
+          <div className='aspect-h-9 aspect-w-16 mb-4'>
+            <Painting src={post.image} />
+          </div>
+        )}
         <MarkdownDetail content={post.content} />
       </article>
     </>
